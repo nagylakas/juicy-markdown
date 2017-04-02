@@ -74,7 +74,8 @@ version: 1.0.1
       this.parseText(newValue);
     },
     parseText: function (text) {
-      this.$.preview.innerHTML = marked(text ? text : "", this.options);
+      var pattern = /a href=/g;
+      this.$.preview.innerHTML = marked(text ? text : "", this.options).replace(pattern,"a target='_blank' href=");
     }
   });
 </script>
