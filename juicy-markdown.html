@@ -1,7 +1,7 @@
 <!--
 Copyright 2014 Smörgåsbord Development.
 Update to Polymer 1.0 by carlos araya
-version: 1.0.1
+version: 1.0.2
 -->
 <link rel="import" href="../polymer/polymer.html">
 <!--
@@ -81,12 +81,11 @@ version: 1.0.1
     parseText: function (text) {
       if (this.targetframe != '') {
         var pattern = /a href=/g;
-        this.$.preview.innerHTML = marked(text ? text : "", this.options).replace(pattern,"a target='_blank' href=");
+        this.$.preview.innerHTML = marked(text ? text : "", this.options).replace(pattern,"a target='"+this.targetframe+"' href=");
       }
       else {
         this.$.preview.innerHTML = marked(text ? text : "", this.options);
       }
-
     }
   });
 </script>
