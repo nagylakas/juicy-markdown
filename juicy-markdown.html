@@ -42,6 +42,11 @@ version: 1.0.1
         value: false,
         notify: true
       },
+      targetframe: {
+        type: String,
+        value: '',
+        notify: true
+      },
       options: {
         type: Object,
         value: function () {
@@ -74,8 +79,14 @@ version: 1.0.1
       this.parseText(newValue);
     },
     parseText: function (text) {
-      var pattern = /a href=/g;
-      this.$.preview.innerHTML = marked(text ? text : "", this.options).replace(pattern,"a target='_blank' href=");
+      if (this.targetframe != '') {
+        var pattern = /a href=/g;
+        this.$.preview.innerHTML = marked(text ? text : "", this.options).replace(pattern,"a target='_blank' href=");
+      }
+      else {
+        this.$.preview.innerHTML = marked(text ? text : "", this.options);
+      }
+
     }
   });
 </script>
