@@ -42,6 +42,7 @@ Attribute | Options  | Default | Description
 ---       | ---      | ---     | ---
 `value`   | *string* | ``      | Markdown to render.
 `ghcss`   | *boolean* | `false` | Should ghithub-markdown.css be imported?
+`targetframe`   | *string* | `` | Set all links target attribute
 
 ## See also
 
